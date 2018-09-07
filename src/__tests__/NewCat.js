@@ -14,20 +14,20 @@ it('renders without crashing', () => {
 
 it('has a name input', ()=>{
   const component = mount(<NewCat />)
- expect(component.find('label#name').text()).toBe("Name")
+ expect(component.find('label#Name').text()).toBe("Name")
 })
 
 it('has a age input', ()=>{
   const component = mount(<NewCat />)
-  expect(component.find('label#age').text()).toBe("Age")
+  expect(component.find('label#Age').text()).toBe("Age")
 })
 
 it('has a enjoys input', ()=>{
   const component = mount(<NewCat />)
-  expect(component.find('label#enjoys').text()).toBe("Enjoys")
+  expect(component.find('label#Enjoys').text()).toBe("Enjoys")
 })
 
 it('has a submit button', ()=>{
   const component = mount(<NewCat />)
-  expect(component.find('button#submit').text()).toBe("Create Cat Profile")
+  expect(component.find('button').text()).toBe("Create Cat Profile")
 })

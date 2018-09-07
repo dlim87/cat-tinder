@@ -30,15 +30,21 @@ class App extends Component {
       ]
     }
   }
-
+  addCat(cat){
+    cat["id"]=this.state.cats.length
+    console.log(cat);
+    this.setState({cats: [...this.state.cats,cat]})
+    console.log(this.state.cats);
+  }
   render() {
     return (
       <div>
               <Header />
               <Router>
                   <Switch>
-                      <Route exact path='/cats' render={(props) => <Cats cats={this.state.cats}/>}/>
-                      <Route exact path='/' component={NewCat} />
+                      <Route exact path='/cats' render={(props) => <Cats cats={this.state.cats}/>}
+                        />
+                      <Route exact path='/' render={(props)=> <NewCat addCat={this.addCat.bind(this)}/>}/>
                   </Switch>
               </Router>
           </div>
