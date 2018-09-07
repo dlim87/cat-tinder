@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {
-  Grid, Col, Row, ListGroup, ListGroupItem
+  Col, Row, ListGroup, ListGroupItem
 } from 'react-bootstrap'
 
 class Cats extends Component {
   render() {
+    console.log(this.props.cats)
     return (
       <Row>
       <Col xs={12}>

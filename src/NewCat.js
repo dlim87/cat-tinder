@@ -1,14 +1,15 @@
 import React,{Component} from 'react';
-import {form, btn, FormControl, ControlLabel} from 'react-bootstrap'
+import {form, FormControl, ControlLabel} from 'react-bootstrap'
+import {Redirect} from 'react-router-dom'
 
 class NewCat extends Component{
   constructor(props){
   super(props)
     this.state = {
       form:{
-        Name: '',
-        Age: '',
-        Enjoys: ''
+        name: '',
+        age: '',
+        enjoys: ''
       }
     }
   }
@@ -20,7 +21,7 @@ class NewCat extends Component{
   NewCat(event){
     event.preventDefault()
     console.log(this.state.form)
-    this.props.addCat(this.state.form)
+    this.props.handleNewCat(this.state.form)
   }
   render(){
   return(
@@ -30,7 +31,7 @@ class NewCat extends Component{
         <ControlLabel id="Name">Name</ControlLabel>
         <FormControl
           type="text"
-          name="Name"
+          name="name"
           id="NameForm"
           className="form-control form-control-sm"
           placeholder="enter name"
@@ -40,7 +41,7 @@ class NewCat extends Component{
         <label id="Age">Age</label>
           <FormControl
             type="number"
-            name="Age"
+            name="age"
             id="AgeForm"
             placeholder="Age"
             onChange={this.handleChange.bind(this)}
@@ -49,7 +50,7 @@ class NewCat extends Component{
           <label id="Enjoys">Enjoys</label>
             <FormControl
               type="textfield"
-              name="Enjoys"
+              name="enjoys"
               id="EnjoysForm"
               placeholder="this cat enjoys"
               onChange={this.handleChange.bind(this)}
@@ -57,6 +58,9 @@ class NewCat extends Component{
               />
             <button type="submit" onClick={this.NewCat.bind(this)}>Create Cat Profile</button>
       </form>
+      {this.props.success &&
+       <Redirect to="/cats" />
+      }
     </div>
   )
   }
