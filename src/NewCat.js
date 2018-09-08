@@ -20,9 +20,12 @@ class NewCat extends Component{
   }
   NewCat(event){
     event.preventDefault()
-    console.log(this.state.form)
+    console.log(this.props.success)
     this.props.handleNewCat(this.state.form)
   }
+  // componentWillMount(){
+  //   this.props.resetsuccess()
+  // }
   render(){
   return(
     <div>
@@ -59,8 +62,7 @@ class NewCat extends Component{
             <button type="submit" onClick={this.NewCat.bind(this)}>Create Cat Profile</button>
       </form>
       {this.props.success &&
-       <Redirect to="/cats" />
-      }
+       <Redirect to="/cats" />}
     </div>
   )
   }

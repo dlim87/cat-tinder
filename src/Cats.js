@@ -5,7 +5,6 @@ import {
 
 class Cats extends Component {
   render() {
-    console.log(this.props.cats)
     return (
       <Row>
       <Col xs={12}>
