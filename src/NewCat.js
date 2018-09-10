@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import {form, FormControl, ControlLabel} from 'react-bootstrap'
+import {FormGroup,form, FormControl, ControlLabel} from 'react-bootstrap'
 import {Redirect} from 'react-router-dom'
+import './NewCat.css'
 
 class NewCat extends Component{
   constructor(props){
@@ -9,7 +10,8 @@ class NewCat extends Component{
       form:{
         name: '',
         age: '',
-        enjoys: ''
+        enjoys: '',
+        img:''
       }
     }
   }
@@ -28,11 +30,10 @@ class NewCat extends Component{
   // }
   render(){
   return(
-    <div>
-      <p> new cat?</p>
-      <form>
+    <div clasName='CatFormContainer'>
+      <form className='CatForm'>
         <ControlLabel id="Name">Name</ControlLabel>
-        <FormControl
+        <FormControl className="form-control"
           type="text"
           name="name"
           id="NameForm"
@@ -42,7 +43,7 @@ class NewCat extends Component{
           value={this.state.form.name}
           />
         <label id="Age">Age</label>
-          <FormControl
+          <FormControl className="form-control"
             type="number"
             name="age"
             id="AgeForm"
@@ -51,7 +52,7 @@ class NewCat extends Component{
             value={this.state.form.age}
             />
           <label id="Enjoys">Enjoys</label>
-            <FormControl
+            <FormControl className="form-control"
               type="textfield"
               name="enjoys"
               id="EnjoysForm"
@@ -59,6 +60,21 @@ class NewCat extends Component{
               onChange={this.handleChange.bind(this)}
               value={this.state.form.enjoys}
               />
+
+              <FormGroup controlId="formControlsSelect">
+                  <ControlLabel>Select</ControlLabel>
+       <FormControl componentClass="select" placeholder="select" value={this.state.form.img} name="img" onChange={this.handleChange.bind(this)}
+         >
+         <option value="/blankcat.png">What kind of cat are you?</option>
+         <option value ="/corporatecat.jpg">Corporate</option>
+         <option value = "/Hipstercat.jpg">Hipster</option>
+         <option value= "/reggaecat.jpg">Reggae</option>
+         <option value="/skatercat.jpg">Sk8er</option>
+         <option value="/sushicat.jpg">Sushi</option>
+         <option value="/tequilacat.jpg">Fiesta</option>
+         <option value="wizardcat.jpg">Magic</option>
+       </FormControl>
+     </FormGroup>
             <button type="submit" onClick={this.NewCat.bind(this)}>Create Cat Profile</button>
       </form>
       {this.props.success &&

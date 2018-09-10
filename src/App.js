@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header'
 import Cats from './Cats'
 import NewCat from './NewCat'
+import List from './list'
 import {BrowserRouter as Router, Route,Switch} from 'react-router-dom'
 import {getCats,createCat} from './api'
 
@@ -52,10 +53,13 @@ class App extends Component {
               <Header />
               <Router>
                   <Switch>
-                      <Route exact path='/cats' render={(props) => <Cats cats={this.state.cats}/>}
+                      <Route exact path='/cats' render={(props) => <Cats cats={this.state.cats}
+                      className='kitty'
+                        />}
                         />
                       <Route exact path='/' render={(props)=> <NewCat handleNewCat={this.handleNewCat.bind(this)} success={this.state.newCatSuccess}
                         />}/>
+                      <Route exact path='/list' render={(props) => <List cats={this.state.cats}/>}/>
                   </Switch>
               </Router>
           </div>

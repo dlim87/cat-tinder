@@ -1,0 +1,19 @@
+form{
+  width: 40vw;
+  margin-left: 30vw;
+  margin-top: 8vh;
+  font-size: 1.5em;
+}
+.form-control{
+  font-size: 1.25em;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: lightpink;
+}
+button{
+  margin-top: 10px;
+}
+.CatFormContainer{
+  display: flex;
+  justify-content: center;
+}

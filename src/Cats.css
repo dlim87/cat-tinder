@@ -1,0 +1,28 @@
+.CatList{
+  margin: 5px;
+margin-left: 25px;
+ background-repeat: no-repeat;
+ background-position: center;
+ border: 2px solid black;
+}
+.CatPic {
+  height:175px;
+  width: auto;
+  display: block;
+}
+
+.cat-name {
+  font-family: "Comic Sans MS";
+  font-size: 2em;
+}
+.cat-age {
+  font-size: 1.25em;
+}
+.cat-enjoys{
+  font-size: 1.5em;
+}
+
+.meow{
+  display: flex;
+  justify-content: center;
+}
